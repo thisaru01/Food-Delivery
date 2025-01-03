@@ -1,20 +1,18 @@
-require('dotenv').config();
-
 const express = require('express');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
+
+dotenv.config();
+connectDB();
 
 // Create express app
 const app = express();
 
 // middleware
-app.use((req, res, next) => {
-    console.log(req.path, req.method);
-    next();
-})
+app.use(express.json());
 
-// route
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+//routes
+app.use('/api/users', require('./routes/userRoutes'));
 
 // listen for requests
 app.listen(process.env.PORT, () => {
