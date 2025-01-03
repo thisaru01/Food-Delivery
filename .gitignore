@@ -1,0 +1,22 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# Dependency directories
+node_modules/
+
+# IDE and editor-specific files
+.vscode/
+.idea/
+
+# System files
+.DS_Store
+Thumbs.db
